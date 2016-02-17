@@ -5,7 +5,7 @@ public class FarreyArrayImpl {
     public FarreyArrayImpl() {
     }
 
-    public RationalNumber[] generate(int n) {
+    public RationalNumber[] runFloyd(int n) {
 
         RationalNumber[] list = new RationalNumber[n * n];
 
@@ -23,11 +23,11 @@ public class FarreyArrayImpl {
 
                 if (list[j] != null && list[j+1] != null && list[j].getB()+list[j+1].getB()==i) {
                         count++;
-                        RationalNumber med = new RationalNumber((list[j].getA() + list[j + 1].getA()), (list[j].getB() + list[j + 1].getB()));
-                        for (int l = count; l > j ; l--) {
-                            list[l] = list[l-1];
+                        RationalNumber mid = new RationalNumber((list[j].getA() + list[j + 1].getA()), (list[j].getB() + list[j + 1].getB()));
+                        for (int q = count; q > j ; q--) {
+                            list[q] = list[q-1];
                         }
-                        list[j + 1] = med;
+                        list[j + 1] = mid;
                 }
             }
         return list;

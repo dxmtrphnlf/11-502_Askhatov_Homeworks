@@ -21,7 +21,7 @@ public class FarreyArrayImplTest {
     @org.junit.Test
     public void testGraph() throws Exception {
         // то, что получили фактически при тестировании
-        RationalNumber[] actual = farreyArray.generate(8);
+        RationalNumber[] actual = farreyArray.runFloyd(8);
 
         // матрица для ориентированного графа
         RationalNumber[] rationalNumber = new RationalNumber[64];

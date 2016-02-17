@@ -5,13 +5,12 @@ public class Main {
     public static void main(String[] args) {
 
         FarreyArrayImpl array = new FarreyArrayImpl();
-        RationalNumber numbers[] = array.generate(8);
+        RationalNumber rationalNumberlist[] = array.runFloyd(8);
 
-        int j = 0;
-        while (numbers[j + 1] != null) {
-            System.out.print(numbers[j].getA() + "/" + numbers[j].getB() + ", ");
-            j++;
+        int i = 0;
+        while (rationalNumberlist[i] != null) {
+            System.out.print(rationalNumberlist[i].getA() + "/" + rationalNumberlist[i].getB() + " ");
+            i++;
         }
-        System.out.print(numbers[j].getA() + "/" + numbers[j].getB() + ".");
     }
 }
