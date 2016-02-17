@@ -1,12 +1,17 @@
 package ru.itis.inform;
 
-/**
- * Created by Sodium on 10.02.2016.
- */
 public class Main {
+
     public static void main(String[] args) {
-       FareySequenceGeneratorArrayImpl k = new FareySequenceGeneratorArrayImpl();
-        k.generate(8);
-        k.RationalNumberShow();
+
+        FarreyArrayImpl array = new FarreyArrayImpl();
+        RationalNumber numbers[] = array.generate(8);
+
+        int j = 0;
+        while (numbers[j + 1] != null) {
+            System.out.print(numbers[j].getA() + "/" + numbers[j].getB() + ", ");
+            j++;
+        }
+        System.out.print(numbers[j].getA() + "/" + numbers[j].getB() + ".");
     }
 }
