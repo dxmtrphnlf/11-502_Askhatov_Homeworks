@@ -19,13 +19,17 @@ public class FarreyArrayImplTest {
 
     // модульный тест - тестирующая функция
     @org.junit.Test
-    public void testGraph() throws Exception {
+    public void testFarrey() throws Exception {
         // то, что получили фактически при тестировании
-        RationalNumber[] actual = farreyArray.runFloyd(8);
+        RationalNumber[] actual = new RationalNumber[64];
+        actual= farreyArray.runFloyd(8);
 
-        // матрица для ориентированного графа
         RationalNumber[] rationalNumber = new RationalNumber[64];
-        rationalNumber[0] = new RationalNumber(0,1);
+        for(int i=0;i<64;i++) {
+            rationalNumber[i]= null;
+        }
+        RationalNumber mida = new RationalNumber(0, 1);
+        rationalNumber[0] = mida;
         rationalNumber[1] = new RationalNumber(1,8);
         rationalNumber[2] = new RationalNumber(1,7);
         rationalNumber[3] = new RationalNumber(1,6);
@@ -48,9 +52,29 @@ public class FarreyArrayImplTest {
         rationalNumber[20] = new RationalNumber(6,7);
         rationalNumber[21] = new RationalNumber(7,8);
         rationalNumber[22] = new RationalNumber(1,1);
+        int[] newActualA = new int[64];
+        int[] expectedA = new int[64];
+        int[] expectedB = new int[64];
+        int[] newActualB = new int[64];
+        for(int i=0;i<23;i++) {
+            newActualA[i]=(actual[i].getA());
+            expectedA[i]=(rationalNumber[i].getA());
+            newActualB[i]=(actual[i].getB());
+            expectedB[i]=(rationalNumber[i].getB());
+        }
+        //проверил совпадение числителей и знаменатилей, но тестирование не проходит, толи ссылается на разные объекты
+        for(int i=0;i<23;i++) {
+           System.out.print(newActualA[i]+" ");
+           System.out.print(expectedA[i]+" || ");
+           System.out.print(newActualB[i]+" ");
+           System.out.println(expectedB[i]);
+
+        }
 
 
         // сравниваем то, что получили, с тем, что ожидаем получить
+          assertEquals(newActualA, expectedA);
+
 
     }
     @org.junit.Test(expected = IllegalArgumentException.class)
