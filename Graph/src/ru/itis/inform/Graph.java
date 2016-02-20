@@ -18,5 +18,5 @@ public interface Graph {
      * Вывод графа на экран
      */
     void showGraph();
-    int[][] generateNewGraph();
+    int[][] runFloyd();
 }

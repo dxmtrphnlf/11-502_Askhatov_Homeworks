@@ -35,7 +35,7 @@ public class Main {
 
         graph.showGraph();
         System.out.println();
-        int[][] a = graph.generateNewGraph();
+        int[][] a = graph.runFloyd();
         for (int i = 0; i<=3; i++) {
             for (int j = 0; j<=3; j++) {
                 System.out.print(a[i][j]+" ");
@@ -45,7 +45,7 @@ public class Main {
         System.out.println();
         directedGraph.showGraph();
         System.out.println();
-        int b[][] = directedGraph.generateNewGraph();
+        int b[][] = directedGraph.runFloyd();
         for (int i = 0; i<3; i++) {
             for (int j = 0; j<3; j++) {
                 System.out.print(b[i][j]+" ");

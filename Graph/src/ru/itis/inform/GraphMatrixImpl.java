@@ -56,7 +56,7 @@ public class GraphMatrixImpl implements DirectedGraph, Graph {
         }
     }
 
-    public int[][] generateNewGraph() {
+    public int[][] runFloyd() {
         int newMatrix[][] = new int[DEFAULT_SIZE][DEFAULT_SIZE];
         for (int i = 0; i < DEFAULT_SIZE; i++) {
             for (int j = 0; j < DEFAULT_SIZE; j++) {

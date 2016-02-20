@@ -1,5 +1,7 @@
 package ru.itis.inform;
 
+import org.junit.Assert;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -28,7 +30,7 @@ public class DirectedGraphTest {
         @org.junit.Test
         public void testGraph() throws Exception {
             // то, что получили фактически при тестировании
-            int[][] directedActual = directedGraph.generateNewGraph();
+            int[][] directedActual = directedGraph.runFloyd();
 
             // матрица для неориентированного графа
 
@@ -40,7 +42,7 @@ public class DirectedGraphTest {
 
 
             // сравниваем то, что получили, с тем, что ожидаем получить
-            assertEquals(directedMatrix, directedActual);
+            Assert.assertArrayEquals(directedMatrix, directedActual);
         }
         @org.junit.Test(expected = IllegalArgumentException.class)
         public void testOnNegative() throws Exception {

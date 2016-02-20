@@ -1,5 +1,7 @@
 package ru.itis.inform;
 
+import org.junit.Assert;
+
 import static org.junit.Assert.*;
 
 public class GraphTest {
@@ -27,7 +29,7 @@ public class GraphTest {
     @org.junit.Test
     public void testGraph() throws Exception {
         // то, что получили фактически при тестировании
-        int[][] actual = graph.generateNewGraph();
+        int[][] actual = graph.runFloyd();
         // матрица для неориентированного графа
         int[][] matrix = new int[50][50];
         matrix[0][1]=5;
@@ -42,7 +44,7 @@ public class GraphTest {
         matrix[3][2]=4;
 
         // сравниваем то, что получили, с тем, что ожидаем получить
-        assertEquals(matrix, actual);
+        Assert.assertArrayEquals(matrix, actual);
     }
     @org.junit.Test(expected = IllegalArgumentException.class)
     public void testOnNegative() throws Exception {
