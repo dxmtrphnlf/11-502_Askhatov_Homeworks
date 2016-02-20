@@ -26,32 +26,22 @@ public class LinkedList<T> implements List<T> {
 
     @Override
     public void remove(T element) {
-        Node newNode = this.first;
-        for(int i = 0; i < count - 2; i++) {
-            if(i == 0 && newNode.getValue() == element) {
-                first = newNode.getNext();
+        if(first == null) {
+            System.out.println("Список пуст");
+            return;
+        }
+        if (first.getValue().equals(element)) {
+            first = first.getNext();
+            return;
+        }
+        Node<T> newNode = first;
+        while (newNode.getNext() != null) {
+            if (newNode.getNext().getValue().equals(element)) {
+                newNode.setNext(newNode.getNext().getNext());
                 return;
             }
-            if(newNode.getNext().getValue() == element) {
-                if(i==0) {
-                    first = newNode;
-                    return;
-                } else {
-                    newNode.setNext(newNode.getNext().getNext());
-                    return;
-                }
-            }
             newNode = newNode.getNext();
         }
-        count--;
-    }
-    public void showList() {
-        Node newNode = this.first;
-        while (newNode!=null) {
-            System.out.println(newNode.getValue());
-            newNode = newNode.getNext();
-        }
-
     }
 
     @Override

@@ -12,7 +12,7 @@ public class Node<T> {
     }
 
     public void setNext(Node next) {
-        this.next  = next;
+        this.next = next;
     }
 
     public T getValue() {

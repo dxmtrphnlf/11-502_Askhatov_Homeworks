@@ -7,12 +7,10 @@ public class Main {
         list.add(5);
         list.add(7);
         list.add(10);
-        list.remove(10);
-
         Iterator<Integer> iterator = list.iterator();
-
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+        System.out.println(iterator.next());
+        iterator.insert(63);
+        System.out.println(iterator.next());
+        System.out.println(iterator.next());
     }
 }
