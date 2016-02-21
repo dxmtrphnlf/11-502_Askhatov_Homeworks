@@ -4,25 +4,15 @@ import org.junit.Assert;
 
 import static org.junit.Assert.assertEquals;
 
-
-/**
- * Created by Sodium on 17.02.2016.
- */
 public class FarreyArrayImplTest {
-    // объектная переменная для объекта, который мы будем тестировать
     private FarreyArrayImpl farreyArray;
 
-
-    // инструкция которая запускается перед тестами
     @org.junit.Before
     public void setUp() throws Exception {
         this.farreyArray = new FarreyArrayImpl();
     }
-
-    // модульный тест - тестирующая функция
     @org.junit.Test
     public void testFarrey() throws Exception {
-        // то, что получили фактически при тестировании
         RationalNumber[] actual = new RationalNumber[64];
         actual= this.farreyArray.runFloyd(8);
 
@@ -63,7 +53,6 @@ public class FarreyArrayImplTest {
             newActualB[i]=(actual[i].getB());
             expectedB[i]=(rationalNumber[i].getB());
         }
-        //проверил совпадение числителей и знаменатилей, но тестирование не проходит, толи ссылается на разные объекты
         for(int i=0;i<23;i++) {
            System.out.print(newActualA[i]+" ");
            System.out.print(expectedA[i]+" || ");
@@ -71,17 +60,11 @@ public class FarreyArrayImplTest {
            System.out.println(expectedB[i]);
 
         }
-
-
-        // сравниваем то, что получили, с тем, что ожидаем получить
         Assert.assertArrayEquals(newActualA, expectedA);
         Assert.assertArrayEquals(newActualB, expectedB);
-
-
     }
     @org.junit.Test(expected = IllegalArgumentException.class)
     public void testOnNegative() throws Exception {
         RationalNumber d = new RationalNumber(3, 0);
     }
-
 }
