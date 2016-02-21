@@ -2,10 +2,6 @@ package ru.itis.inform;
 
 import org.junit.Assert;
 
-
-/**
- * Created by Sodium on 17.02.2016.
- */
 public class IteratorTest {
     private LinkedList<String> linkedList;
     private Iterator<String> iterator;
