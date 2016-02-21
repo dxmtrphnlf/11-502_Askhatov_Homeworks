@@ -43,10 +43,10 @@ class LinkedListIteratorImpl<T> implements Iterator<T> {
             this.current = current.getPrevious();
         } else System.out.println("Следующий/предыдущий элемент не найден.");
     }
-    public T peakNext() {
+    public T pikNext() {
         return current.getNext().getValue();
     }
-    public T peakPrevious() {
+    public T pikPrevious() {
         return current.getNext().getValue();
     }
 }

@@ -25,6 +25,6 @@ public interface Iterator<T> {
      * @param element
      */
     void insert(T element);
-    T peakNext();
-    T peakPrevious();
+    T pikNext();
+    T pikPrevious();
 }
