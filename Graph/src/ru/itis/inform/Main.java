@@ -1,9 +1,5 @@
 package ru.itis.inform;
 
-/**
- * Created by Sodium on 08.02.2016.
- */
-
 public class Main {
 
     public static void main(String[] args) {
